@@ -4,7 +4,7 @@ import scipy.ndimage
 import cv2
 from IPython.display import display, Image
 
-img="batman.jpeg"
+img="img.png"
 def grayscale(rgb):
     return np.dot(rgb[...,:3],[0.299,0.587,0.114])
 
@@ -14,7 +14,7 @@ def dodge(front,back):
     result[result==255]=255
     return result.astype("uint8")
 
-s=imageio.imread("captain.png")     
+s=imageio.imread("batman.jpeg")     
 g=grayscale(s)
 i=255-g
 
