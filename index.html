@@ -21,7 +21,12 @@
         <ul class="nav-menu">
             <li class="nav-item"><a href="#home">Home</a></li>
             <li class="nav-item"><a href="#tutorial">Tutorial</a></li>
-            <li class="nav-item"><a href="#">Fitur</a></li>
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle">Fitur <i class="fa fa-angle-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#fitur1">ColorChange</a></li>
+                    <li><a href="#fitur2">Compress</a></li>
+                </ul>
         </ul>
     </nav><!-- Navbar -->
 
@@ -33,7 +38,7 @@
             <a href="upload.html" class="btn-upload">Upload Image Kamu</a>
         </div>
         <div class="home-right">
-            <img src="img/home.png" alt="Gambar" class="gambar">
+            <img src="img/home.png" alt="Gambar_home" class="gambar">
         </div>
     </section><!-- Home -->
 
@@ -75,7 +80,37 @@
         <a href="upload.html" class="btn-upload">Upload Image Kamu</a>
     </section> <!-- Tutorial -->
 
-    <span class="icon-download"></span>
+    <section class="fitur" id="fitur1">
+        <div class="fitur-left">
+            <div class="image-stack">
+                <img src="img/fitur4.png" alt="Gambar 4">
+                <img src="img/fitur3.png" alt="Gambar 3">
+                <img src="img/fitur2.png" alt="Gambar 2">
+                <img src="img/fitur1.png" alt="Gambar 1">
+            </div>
+        </div>
+        <div class="fitur-right">
+            <h1>Pilih warna favoritmu untuk gambar sketsa yang lebih menarik.</h1>
+            <p>Kami memilki fitur yang bisa membuat gambar sketsamu lebih berwarna dan menarik.
+                Semua warna bisa kamu pilih untuk diadikan warna sketsa yang kamu buat.</p>
+            <a href="upload.html" class="btn-upload">Upload Image Kamu</a>
+        </div>
+    </section><!-- colorchange -->
 
+    <section class="fitur" id="fitur2">
+        <div class="fitur-right">
+            <h1>Pilih warna favoritmu untuk gambar sketsa yang lebih menarik.</h1>
+            <p>Kami memilki fitur yang bisa membuat gambar sketsamu lebih berwarna dan menarik.
+                Semua warna bisa kamu pilih untuk diadikan warna sketsa yang kamu buat.</p>
+            <a href="upload.html" class="btn-upload">Upload Image Kamu</a>
+        </div>
+        <div class="fitur-left">
+            <div class="image-stack2">
+                <img src="img/fitur1.png" alt="Gambar_home" class="gambar1">
+                <img src="img/fitur1.png" alt="Gambar_home" class="gambar2">
+            </div>
+        </div>
+    </section><!-- colorchange -->
 </body>
+
 </html>
