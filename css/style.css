@@ -276,6 +276,7 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 0 10%;
+    padding-top: 2.5rem;
 }
 
 .fitur-right {
