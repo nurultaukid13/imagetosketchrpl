@@ -76,6 +76,7 @@ a {
     margin-left: 20px;
     position: relative;
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .nav-item a::before {
@@ -96,7 +97,7 @@ a {
     transform: scaleX(1);
 }
 
-.nav-item a:hover{
+.nav-item a:hover {
     color: #969beb;
 }
 
@@ -109,7 +110,7 @@ a {
     padding: 0;
     margin: 0;
     background-color: #fff;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
     opacity: 0;
     transform: translateY(10px);
@@ -122,6 +123,7 @@ a {
 .dropdown-menu li a {
     display: block;
     padding: 10px;
+    margin-left: 0;
     color: #333;
     text-decoration: none;
 }
@@ -193,7 +195,7 @@ a {
 }
 
 .background {
-    margin-top: 150px;
+    margin-top: 120px;
     position: absolute;
     top: 0;
     left: 0;
@@ -204,7 +206,7 @@ a {
 }
 
 .content {
-    padding-top: 200px;
+    padding-top: 170px;
     margin: auto;
     text-align: center;
     justify-content: center;
@@ -239,6 +241,7 @@ a {
 .step i {
     font-size: 50px;
     padding-right: 20px;
+    color: #333;
 }
 
 .content-step {
@@ -277,9 +280,10 @@ a {
 
 .fitur-right {
     max-width: 40%;
+    height: 60%;
 }
 
-#fitur1 .fitur-right{
+#fitur1 .fitur-right {
     text-align: right;
     margin-right: 2%;
 }
@@ -287,21 +291,17 @@ a {
 .fitur-right h1 {
     color: #333;
     font-size: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3.5rem;
 }
 
 .fitur-right p {
     color: #333;
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .fitur-left {
     width: 50%;
-}
-
-#fitur1 .fitur-left{
-    margin-right: 12rem;
 }
 
 .image-stack {
@@ -311,8 +311,7 @@ a {
 
 .image-stack img {
     position: absolute;
-    width: 75%;
-
+    width: 65%;
 }
 
 .image-stack img:nth-child(1) {
@@ -339,6 +338,10 @@ a {
     z-index: 4;
 }
 
+#fitur2 .fitur-right {
+    margin-left: 3rem;
+}
+
 .image-stack2 {
     position: relative;
     margin-bottom: 22rem;
@@ -355,7 +358,7 @@ a {
     z-index: 1;
 }
 
-.image-stack2 .gambar2{
+.image-stack2 .gambar2 {
     background-color: white;
     position: absolute;
     width: 40%;
@@ -364,4 +367,128 @@ a {
     top: 14rem;
     left: 0rem;
     z-index: 2;
+}
+
+.upload-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.upload-left {
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-upload {
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 90%;
+    margin-top: 50px;
+    border-radius: 2rem;
+}
+
+.upload-drop {
+    border: 7px dashed #abaaaa;
+    padding: 4rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-icon {
+    font-size: 70px;
+    margin-bottom: 20px;
+    color: #515151;
+}
+
+.upload-text {
+    font-size: 25px;
+    margin-bottom: 3rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.upload-browse {
+    font-size: 16px;
+    padding: 10px 20px;
+    color: #696beb;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.upload-browse:hover {
+    color: #969beb;
+}
+
+.upload-right {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.upload-title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-right: 10rem;
+}
+
+.upload-desc {
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 100px;
+    text-align: left;
+}
+
+.upload-pickcolor {
+    margin-right: 2rem;
+    margin-top: 10px;
+}
+
+.upload-color {
+    height: 25px;
+    width: 25px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.upload-download {
+    font-size: 16px;
+    padding: 20px 180px;
+    background-color: #969beb;
+    border-radius: 3rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 0.5;
+    pointer-events: none;
+    margin-bottom: 0.5rem;
+    margin-right: 4rem;
+}
+
+.bawah-download {
+    display: flex;
+    flex-direction: row;
+    margin-right: 4rem;
+}
+
+.upload-checkbox {
+    margin-top: 12px;
+}
+
+#compress {
+    cursor: pointer;
 }
