@@ -11,14 +11,14 @@ class ImageToSkecthConverter:
     
     @staticmethod
     def dodge(front,back):
-            result=front*255/(255-back)
-            result[result>255]=255
-            result[result==255]=255
-            return result.astype("uint8")
+        result=front*255/(255-back)
+        result[result>255]=255
+        result[result==255]=255
+        return result.astype("uint8")
         
     @staticmethod
     def grayscale(rgb):
-            return np.dot(rgb[...,:3],[0.299,0.587,0.114])
+        return np.dot(rgb[...,:3],[0.299,0.587,0.114])
         
     def convert_to_sketch(self, original, sketch_location):
         self.original_image = original
@@ -31,3 +31,4 @@ class ImageToSkecthConverter:
         self.sketch_image = f"{sketch_location}/{os.path.basename(self.original_image)}"
 
         cv2.imwrite(self.sketch_image, hasil_sketch)
+        return self.sketch_image
