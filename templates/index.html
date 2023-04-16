@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/css/all.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/all.min.css')}}" type="text/css">
     <title>Image to Sketch</title>
 </head>
 
@@ -35,10 +35,10 @@
             <h1>Ubah gambarmu menjadi sketsa yang menarik secara gratis.</h1>
             <p>Buatlah sketsa gambarmu dengan mudah, ubahlah warna sketsa sesuai dengan keinginanmu menggunakan fitur
                 yang kami sediakan</p>
-            <a href="upload.html" class="btn-upload">Upload Image Kamu</a>
+            <a href="/upload" class="btn-upload">Upload Image Kamu</a>
         </div>
         <div class="home-right">
-            <img src="img/home.png" alt="Gambar_home" class="gambar">
+            <img src="{{url_for('static', filename='img/home.png')}}" alt="Gambar_home" class="gambar">
         </div>
     </section><!-- Home -->
 
@@ -77,23 +77,23 @@
                 </div>
             </div>
         </div>
-        <a href="upload.html" class="btn-upload">Upload Image Kamu</a>
+        <a href="/upload" class="btn-upload">Upload Image Kamu</a>
     </section> <!-- Tutorial -->
 
     <section class="fitur" id="fitur1">
         <div class="fitur-left">
             <div class="image-stack">
-                <img src="img/fitur4.png" alt="Gambar 4">
-                <img src="img/fitur3.png" alt="Gambar 3">
-                <img src="img/fitur2.png" alt="Gambar 2">
-                <img src="img/fitur1.png" alt="Gambar 1">
+                <img src="{{url_for('static', filename='img/fitur4.png')}}" alt="Gambar 4">
+                <img src="{{url_for('static', filename='img/fitur3.png')}}" alt="Gambar 3">
+                <img src="{{url_for('static', filename='img/fitur2.png')}}" alt="Gambar 2">
+                <img src="{{url_for('static', filename='img/fitur1.png')}}" alt="Gambar 1">
             </div>
         </div>
         <div class="fitur-right">
             <h1>Pilih warna favoritmu untuk gambar sketsa yang lebih menarik.</h1>
             <p>Kami memilki fitur yang bisa membuat gambar sketsamu lebih berwarna dan menarik.
                 Semua warna bisa kamu pilih untuk dijadikan warna sketsa yang kamu buat.</p>
-            <a href="upload.html" class="btn-upload">Upload Image Kamu</a>
+            <a href="/upload" class="btn-upload">Upload Image Kamu</a>
         </div>
     </section><!-- colorchange -->
 
@@ -102,12 +102,12 @@
             <h1>Compres sketsamu untuk menghemat penyimpanan data.</h1>
             <p>Fitur Compres memungkinkan kamu untuk mengurangi ukuran file dengan cepat dan mudah, sehingga dapat menghemat ruang
                 penyimpanan datamu.</p>
-            <a href="upload.html" class="btn-upload">Upload Image Kamu</a>
+            <a href="/upload" class="btn-upload">Upload Image Kamu</a>
         </div>
         <div class="fitur-left">
             <div class="image-stack2">
-                <img src="img/fitur1.png" alt="Gambar_home" class="gambar1">
-                <img src="img/fitur1.png" alt="Gambar_home" class="gambar2">
+                <img src="{{url_for('static', filename='img/fitur1.png')}}" alt="Gambar_home" class="gambar1">
+                <img src="{{url_for('static', filename='img/fitur1.png')}}" alt="Gambar_home" class="gambar2">
             </div>
         </div>
     </section><!-- colorchange -->

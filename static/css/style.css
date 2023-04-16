@@ -11,6 +11,10 @@ a {
     text-decoration: none;
 }
 
+.upload-drop input {
+    display:none;
+}
+
 .full_logo {
     padding-left: 80px;
 }
@@ -398,11 +402,24 @@ a {
     border: 7px dashed #abaaaa;
     padding: 4rem;
     border-radius: 2rem;
-    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.preview_sketch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview_sketch img{
+    width: 80%;
+    height: auto;
+    border: 7px dashed #abaaaa;
+    padding: 1rem;
+    border-radius: 2rem;
 }
 
 .upload-icon {

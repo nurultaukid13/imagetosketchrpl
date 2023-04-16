@@ -5,27 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/css/all.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css/all.css')}}" type="text/css">
     <title>Image to Sketch</title>
 </head>
 
 <body>
     <nav class="navbar">
         <div class="full_logo">
-            <a href="index.html">
+            <a href="/">
                 <div class="logo"><span>3</span></div>
                 <div class="judul_nav">Image to Sketch</div>
             </a>
         </div>
         <ul class="nav-menu">
-            <li class="nav-item"><a href="index.html#home">Home</a></li>
-            <li class="nav-item"><a href="index.html#tutorial">Tutorial</a></li>
+            <li class="nav-item"><a href="/#home">Home</a></li>
+            <li class="nav-item"><a href="/#tutorial">Tutorial</a></li>
             <li class="nav-item dropdown">
                 <a>Fitur <i class="fa fa-angle-down"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="index.html#fitur1">ColorChange</a></li>
-                    <li><a href="index.html#fitur2">Compress</a></li>
+                    <li><a href="/#fitur1">ColorChange</a></li>
+                    <li><a href="/#fitur2">Compress</a></li>
                 </ul>
             </li>
         </ul>
@@ -34,12 +34,20 @@
     <div class="upload-container">
         <div class="upload-left">
             <div class="content-upload">
-                <div class="upload-drop">
-                    <i class="fas fa-image upload-icon"></i>
-                    <div class="upload-text">Drag & drop an image</div>
-                    <input type="file" id="upload" style="display: none;">
-                    <label for="upload" class="upload-browse">Browse on your device</label>
-                </div>
+                {%if file_path%}
+                    <div class="preview_sketch">
+                        <img src="{{file_path}}" alt="preview_sketch">
+                    </div>
+                {%else %}
+                    <form action="/upload/sketch" enctype="multipart/form-data" method="POST">
+                        <div class="upload-drop">
+                            <i class="fas fa-image upload-icon"></i>
+                            <div class="upload-text">Drag & drop an image</div>
+                            <input type="file" name="upload" id="upload"  accept="image/*">
+                            <label for="upload" class="upload-browse">Browse on your device</label>
+                        </div>
+                    </form>
+                {%endif%}
             </div>
         </div>
         <div class="upload-right">
@@ -59,5 +67,6 @@
         </div>
     </div>
 </body>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </html>
