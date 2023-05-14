@@ -53,7 +53,13 @@
         <div class="upload-right">
             <div class="upload-title">Image to Sketch</div>
             <div class="upload-desc">Membuat sketsa gambar jadi lebih mudah dan menarik.</div>
-            <button class="upload-download" disabled>Download</button>
+            <form action="/download" method="GET">
+                    {%if file_path%}
+                        <button type="submit" class="siap-download">Download</button>
+                    {%else%}
+                        <button class="upload-download" disabled>Download</button>
+                    {%endif%}
+            </form>
             <div class="bawah-download"> 
                 <div class="upload-pickcolor">
                     <label for="upload-color-input">Pilih warna:</label>

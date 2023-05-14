@@ -490,11 +490,28 @@ a {
     border-radius: 3rem;
     color: white;
     border: none;
-    cursor: pointer;
     opacity: 0.5;
     pointer-events: none;
     margin-bottom: 0.5rem;
     margin-right: 4rem;
+}
+
+.siap-download{
+    font-size: 16px;
+    padding: 20px 180px;
+    background-color: #5762f4;
+    border-radius: 3rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 0.5;
+    margin-bottom: 0.5rem;
+    margin-right: 4rem;
+    transition: all 0.3s ease-in-out
+}
+
+.siap-download:hover{
+    background-color: #969beb;
 }
 
 .bawah-download {

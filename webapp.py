@@ -1,11 +1,11 @@
 import os
 from werkzeug.utils import secure_filename
-from flask import Flask, render_template, redirect, request, url_for, session, flash
+from flask import Flask, render_template, redirect, request, url_for, session, flash, send_file
 from imageToSketchConverter import ImageToSkecthConverter
 
 app = Flask(__name__)
 app.secret_key = 'kelompok3rpl'
-
+sketch=ImageToSkecthConverter()
 
 @app.route('/')
 def index():
@@ -42,7 +42,6 @@ def allowed_file(filename):
     return '.' in filename and \
         filename.rsplit('.', 1)[1] in {'png', 'jpg', 'jpeg'}
 
-
 @app.route('/uploaded_sketch')
 def uploaded_sketch():
     file_path = session.get('file_path', None)
@@ -50,10 +49,13 @@ def uploaded_sketch():
         flash('File tidak ditemukan')
         return redirect(url_for('upload_page'))
     else:
-        sketch = ImageToSkecthConverter()
         sketch.convert_to_sketch(file_path, 'static/sketch')
+        session['sketch'] = sketch.sketch_image
     return render_template('upload.html', file_path=sketch.sketch_image)
 
+@app.route('/download', methods=['GET'])
+def download_file():
+    return sketch.download_sketch()
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
