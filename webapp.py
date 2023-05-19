@@ -1,11 +1,11 @@
 import os
 from werkzeug.utils import secure_filename
-from flask import Flask, render_template, redirect, request, url_for, session, flash, send_file
-from imageToSketchConverter import ImageToSkecthConverter
+from flask import Flask, render_template, redirect, request, url_for, session, flash
+from imageToSketchConverter import ImageToSketchConverter
 
 app = Flask(__name__)
 app.secret_key = 'kelompok3rpl'
-sketch=ImageToSkecthConverter()
+sketch=ImageToSketchConverter()
 
 @app.route('/')
 def index():
@@ -58,4 +58,4 @@ def download_file():
     return sketch.download_sketch()
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run(debug=True, port=5002)
