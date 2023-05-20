@@ -4,18 +4,16 @@ class ImageToSketchConverterFacade:
     def __init__(self):
         self.converter = ImageToSketchConverter()
 
-    def convert_to_sketch(self, image_path: str, color: str):
-        sketch_location = self.converter.convert_to_sketch(image_path, "sketches/")
-        self.converter.set_color(sketch_location, color)
-        compressed_sketch = self.converter.compress_image(sketch_location)
-        return compressed_sketch
+    def convert_to_sketch(self, image_path: str, sketch_location: str) -> str:
+        sketch_image = self.converter.convert_to_sketch(image_path, sketch_location)
+        return sketch_image
 
-    def compress_sketch(self):
-        # Implement the logic to compress the sketch image
-        # Return the path of the compressed sketch image file
+    def set_color(self, sketch_image: str, hex_code: str) -> str:
         pass
 
-    def download_sketch(self, file_path: str):
-        # Implement the logic to download the sketch image
-        # at the specified file_path
+    def compress_image(self, sketch_image: str) -> str:
         pass
+
+    def download_sketch(self) -> str:
+        sketch_file_path = self.converter.download_sketch()
+        return sketch_file_path
