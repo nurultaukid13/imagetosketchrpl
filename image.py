@@ -8,7 +8,6 @@ class Image:
         self.file_name = ''
         self.file_path = ''
         self.weight = ''
-        self.format = ''
 
     def set_file_path(self,filepath:str):
         self.file_path = filepath
@@ -40,6 +39,3 @@ class Image:
 
     def get_weight(self) -> int:
         return self.weight
-
-    def get_format(self) -> str:
-        return self.format

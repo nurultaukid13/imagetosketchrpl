@@ -41,7 +41,7 @@ class ImageToSketchConverter:
         return self.sketch_image
     
     # mengubah warna sketch
-    def set_color(self, sketch_image:str, hex_code: str)-> str:
+    def set_color(self, sketch_image:str, rgb_color: str)-> str:
         pass
     
     # compress sketch image

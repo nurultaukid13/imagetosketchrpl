@@ -1,6 +1,9 @@
 class Color:
-    def __init__(self, hex_code: str):
-        self.hex_code = hex_code
+    def __init__(self):
+        self.rgb_color = ''    
 
-    def get_hex_code(self) -> str:
-        return self.hex_code
+    def set_rgb_color(self, warna_rgb):
+        self.rgb_color =  warna_rgb
+    
+    def get_rgb_color(self) -> str:
+        return self.rgb_color
