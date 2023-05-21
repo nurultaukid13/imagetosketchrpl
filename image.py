@@ -15,6 +15,7 @@ class Image:
     def set_file_name(self,filename:str):
         self.file_name = filename
     
+    @staticmethod
     def allowed_file(self,nama_file):
         return '.' in nama_file and \
             nama_file.rsplit('.', 1)[1] in {'png', 'jpg', 'jpeg'}
