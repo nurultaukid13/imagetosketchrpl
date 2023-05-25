@@ -415,8 +415,7 @@ a {
 }
 
 .preview_sketch img{
-    width: 80%;
-    height: auto;
+    width: 65%;
     border: 7px dashed #abaaaa;
     padding: 1rem;
     border-radius: 2rem;
@@ -482,6 +481,12 @@ a {
     margin: auto;
     cursor: pointer;
 }
+.none-color {
+    height: 25px;
+    width: 25px;
+    margin: auto;
+    pointer-events: none;
+}
 
 .upload-download {
     font-size: 16px;
@@ -511,7 +516,7 @@ a {
 }
 
 .siap-download:hover{
-    background-color: #969beb;
+    background-color: #020751;
 }
 
 .bawah-download {
