@@ -15,8 +15,6 @@ class Color:
         g = int(hex_code[2:4], 16)
         b = int(hex_code[4:6], 16)
         return (r, g, b)
-
-
     
     def get_rgb_color(self) -> str:
         return self.rgb_color
