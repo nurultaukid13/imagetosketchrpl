@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url_for('static', filename='css/css/all.min.css')}}" type="text/css">
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
     <title>Image to Sketch</title>
 </head>
 
@@ -19,9 +20,9 @@
             </a>
         </div>
         <ul class="nav-menu">
-            <li class="nav-item"><a href="#home">Home</a></li>
-            <li class="nav-item"><a href="#tutorial">Tutorial</a></li>
-            <li class="nav-item dropdown">
+            <li class="nav-item" data-target="section1"><a href="#home">Home</a></li>
+            <li class="nav-item" data-target="section2"><a href="#tutorial">Tutorial</a></li>
+            <li class="nav-item dropdown" data-target="section3">
                 <a>Fitur <i class="fa fa-angle-down"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="#fitur1">ColorChange</a></li>

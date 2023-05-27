@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url_for('static', filename='css/css/all.css')}}" type="text/css">
     <title>Image to Sketch</title>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </head>
 
 <body>
@@ -62,20 +63,19 @@
                 <div class="bawah-download">
                     <div class="upload-checkbox">
                         <label for="compress">Compress</label>
-                        <input type="checkbox" id="compress" name="compress" {% if not file_path %} disabled style="pointer-events:none" {% endif %}>
+                        <input type="checkbox" id="compress" name="compress" {% if not file_path %} disabled
+                            style="pointer-events:none" {% endif %}>
                     </div>
             </form>
-        <div class="upload-pickcolor">
-            <form action="/uploaded_sketch/coloring" method="POST" enctype="multipart/form-data">
-                <label for="upload-color-input">Pilih warna:</label>
-                <input type="color" name="color" id="color" {% if file_path %} class="upload-color"
-                    onchange="this.form.submit()" {%else%} class="none-color" disabled{% endif %}>
-            </form>
+            <div class="upload-pickcolor">
+                <form action="/uploaded_sketch/coloring" method="POST" enctype="multipart/form-data">
+                    <label for="upload-color-input">Pilih warna:</label>
+                    <input type="color" name="color" id="color" {% if file_path %} class="upload-color"
+                        onchange="this.form.submit()" {%else%} class="none-color" disabled{% endif %}>
+                </form>
+            </div>
         </div>
     </div>
-    </div>
-    </div>
 </body>
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </html>

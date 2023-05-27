@@ -402,7 +402,7 @@ a {
 
 .upload-drop {
     border: 7px dashed #abaaaa;
-    padding: 4rem;
+    padding: 10rem;
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
