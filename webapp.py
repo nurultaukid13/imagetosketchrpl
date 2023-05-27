@@ -33,6 +33,7 @@ class WebApp:
             else:
                 if gambar.scan_file(request.files['upload']):
                     request.files['upload'].save(gambar.get_file_path())
+                    gambar.set_weight()
                     return redirect(url_for('uploaded_sketch'))
                 else:
                     return redirect(request.url)
@@ -60,6 +61,7 @@ class WebApp:
         @self.app.route('/download', methods=['GET'])
         def download_file():
             return self.facade.download_sketch()
+
 
 if __name__ == "__main__":
     web_app = WebApp()

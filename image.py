@@ -9,6 +9,9 @@ class Image:
         self.file_path = ''
         self.weight = ''
 
+    def set_weight(self):
+        self.weight = os.path.getsize(self.file_path)
+
     def set_file_path(self,filepath:str):
         self.file_path = filepath
 
@@ -31,12 +34,12 @@ class Image:
                 flash('Tipe file tidak diizinkan')
                 return False
             else:
-                self.set_file_path(os.path.join('static/original', self.file_name))
+                self.set_file_path(os.path.join('static/original', securefile))
                 flash('File berhasil diupload')
                 return True
 
     def get_file_path(self) -> str:
         return self.file_path
-
+    
     def get_weight(self) -> int:
         return self.weight

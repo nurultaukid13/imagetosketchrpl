@@ -12,7 +12,6 @@ class ImageToSketchConverter:
         self.sketch_image = ""
         self.compressed_image = ""
         self.coloring_image=""
-        self.sketch_location = ""
     
     def get_coloring_image(self)->str:
         return self.coloring_image
@@ -34,14 +33,14 @@ class ImageToSketchConverter:
         
     def convert_to_sketch(self, original: str, sketch_location: str)->str:
         self.original_image = original
-        self.sketch_location = sketch_location
+        sketch_location
 
         img = imageio.imread(self.original_image)
         g = self.grayscale(img)
         i = 255 - g
         b = scipy.ndimage.filters.gaussian_filter(i, sigma=10)
         hasil_sketch = self.dodge(b, g)
-        self.sketch_image = f"{self.sketch_location}/{os.path.basename(self.original_image)}"
+        self.sketch_image = f"{sketch_location}/{os.path.basename(self.original_image)}"
         
         hasil_sketch = cv2.cvtColor(hasil_sketch, cv2.COLOR_BGR2RGB)
         
@@ -101,10 +100,9 @@ class ImageToSketchConverter:
         img.putdata(new_data)
 
         return img
-
     
     # compress sketch image
-    def compress_image(self, sketch_image:str)->str:
+    def compress_image(self, sketch_image: str, max_size: int) -> str:
         pass
     
     # fungsi download
@@ -113,5 +111,6 @@ class ImageToSketchConverter:
             file_download = self.get_coloring_image()
         else:
             file_download = self.get_sketch_image()
+
         sketh_path = os.path.splitext(os.path.basename(file_download))
-        return send_file(file_download,download_name = sketh_path[0] +'_sketch' + sketh_path[1] ,as_attachment=True)
+        return send_file(file_download, download_name=sketh_path[0] + '_sketch' + sketh_path[1], as_attachment=True)

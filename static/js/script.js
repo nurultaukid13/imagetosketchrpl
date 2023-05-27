@@ -16,7 +16,7 @@ uploadDrop.addEventListener('drop', (event) => {
             alert('Gambar berhasil diupload!');
             window.location.href = '/uploaded_sketch';
         } else {
-            alert('Terjadi kesalahan saat upload gambar.');
+            alert('Terjadi kesalahan saat upload gambar. Pastikan mengupload dengan format yang diizinkan (png, jpg atau jpeg) dan ukuran dibawah 10MB');
         }
     });
 });
@@ -40,7 +40,7 @@ uploadInput.addEventListener('change', (event) => {
             alert('Gambar berhasil diupload!');
             window.location.href = '/uploaded_sketch';
         } else {
-            alert('Terjadi kesalahan saat upload gambar.');
+            alert('Terjadi kesalahan saat upload gambar.  Pastikan mengupload dengan format yang diizinkan (png, jpg atau jpeg) dan ukuran dibawah 10MB');
         }
     });
 });

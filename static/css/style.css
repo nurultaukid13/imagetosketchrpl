@@ -382,6 +382,8 @@ a {
 
 .upload-left {
     width: 65%;
+    height: 70%;
+    margin-top: 7rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -392,9 +394,9 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80%;
+    height: 120%;
     width: 90%;
-    margin-top: 50px;
+    margin-top: 70px;
     border-radius: 2rem;
 }
 
@@ -415,9 +417,10 @@ a {
 }
 
 .preview_sketch img{
-    width: 55%;
+    max-height: 35rem;
+    max-width: 45rem;
     border: 7px dashed #abaaaa;
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 2rem;
 }
 
@@ -481,13 +484,13 @@ a {
     margin: auto;
     cursor: pointer;
 }
+
 .none-color {
     height: 25px;
     width: 25px;
     margin: auto;
     pointer-events: none;
 }
-
 .upload-download {
     font-size: 16px;
     padding: 20px 180px;

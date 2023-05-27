@@ -68,8 +68,10 @@
                     </form>
                 </div>
                 <div class="upload-checkbox">
-                    <label for="compress">Compress</label>
-                    <input type="checkbox" id="compress">
+                    <form action="/download" method="GET">
+                        <label for="compress">Compress</label>
+                        <input type="checkbox" id="compress" name="compress" {%if not file_path %} disabled style="pointer-events:none"  {%endif%}>
+                    </form>
                 </div>
             </div>
         </div>
