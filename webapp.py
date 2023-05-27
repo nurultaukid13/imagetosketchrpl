@@ -60,7 +60,16 @@ class WebApp:
             
         @self.app.route('/download', methods=['GET'])
         def download_file():
-            return self.facade.download_sketch()
+            compress_checkbox = request.args.get('compress') == 'on'
+    
+            if compress_checkbox:
+                if self.facade.get_coloring_image():
+                    compressed_sketch = self.facade.compress_image(self.facade.get_coloring_image(), max_size=1920)  # Adjust the `max_size` as needed
+                else:
+                    compressed_sketch = self.facade.compress_image(self.facade.get_sketch_image(), max_size=1920)  # Adjust the `max_size` as needed
+                return self.facade.download_sketch()
+            else:
+                return self.facade.download_sketch()
 
 
 if __name__ == "__main__":

@@ -35,18 +35,18 @@
         <div class="upload-left">
             <div class="content-upload">
                 {%if file_path%}
-                    <div class="preview_sketch">
-                        <img src="{{file_path}}" alt="preview_sketch">
-                    </div>
+                <div class="preview_sketch">
+                    <img src="{{file_path}}" alt="preview_sketch">
+                </div>
                 {%else %}
-                    <form action="/upload/sketch" enctype="multipart/form-data" method="POST">
-                        <div class="upload-drop">
-                            <i class="fas fa-image upload-icon"></i>
-                            <div class="upload-text">Drag & drop an image</div>
-                            <input type="file" name="upload" id="upload"  accept="image/*">
-                            <label for="upload" class="upload-browse">Browse on your device</label>
-                        </div>
-                    </form>
+                <form action="/upload/sketch" enctype="multipart/form-data" method="POST">
+                    <div class="upload-drop">
+                        <i class="fas fa-image upload-icon"></i>
+                        <div class="upload-text">Drag & drop an image</div>
+                        <input type="file" name="upload" id="upload" accept="image/*">
+                        <label for="upload" class="upload-browse">Browse on your device</label>
+                    </div>
+                </form>
                 {%endif%}
             </div>
         </div>
@@ -54,27 +54,26 @@
             <div class="upload-title">Image to Sketch</div>
             <div class="upload-desc">Membuat sketsa gambar jadi lebih mudah dan menarik.</div>
             <form action="/download" method="GET">
-                    {%if file_path%}
-                        <button type="submit" class="siap-download">Download</button>
-                    {%else%}
-                        <button class="upload-download" disabled>Download</button>
-                    {%endif%}
-            </form>
-            <div class="bawah-download"> 
-                <div class="upload-pickcolor">
-                    <form action="/uploaded_sketch/coloring" method="POST" enctype="multipart/form-data">
-                        <label for="upload-color-input">Pilih warna:</label>
-                        <input type="color" name="color" id="color" {% if file_path %} class="upload-color" onchange="this.form.submit()" {%else%} class="none-color" disabled{% endif %}>
-                    </form>
-                </div>
-                <div class="upload-checkbox">
-                    <form action="/download" method="GET">
+                {%if file_path%}
+                <button type="submit" class="siap-download">Download</button>
+                {%else%}
+                <button class="upload-download" disabled>Download</button>
+                {%endif%}
+                <div class="bawah-download">
+                    <div class="upload-checkbox">
                         <label for="compress">Compress</label>
-                        <input type="checkbox" id="compress" name="compress" {%if not file_path %} disabled style="pointer-events:none"  {%endif%}>
-                    </form>
-                </div>
-            </div>
+                        <input type="checkbox" id="compress" name="compress" {% if not file_path %} disabled style="pointer-events:none" {% endif %}>
+                    </div>
+            </form>
+        <div class="upload-pickcolor">
+            <form action="/uploaded_sketch/coloring" method="POST" enctype="multipart/form-data">
+                <label for="upload-color-input">Pilih warna:</label>
+                <input type="color" name="color" id="color" {% if file_path %} class="upload-color"
+                    onchange="this.form.submit()" {%else%} class="none-color" disabled{% endif %}>
+            </form>
         </div>
+    </div>
+    </div>
     </div>
 </body>
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>

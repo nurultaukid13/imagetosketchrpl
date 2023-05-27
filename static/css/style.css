@@ -474,7 +474,7 @@ a {
 }
 
 .upload-pickcolor {
-    margin-right: 2rem;
+    margin-right: 4rem;
     margin-top: 10px;
 }
 
@@ -524,8 +524,8 @@ a {
 
 .bawah-download {
     display: flex;
-    flex-direction: row;
-    margin-right: 4rem;
+    flex-direction: row-reverse;
+    margin-right: 10rem;
 }
 
 .upload-checkbox {

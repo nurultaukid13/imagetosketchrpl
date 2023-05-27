@@ -21,7 +21,8 @@ class ImageToSketchConverterFacade:
         return coloring
 
     def compress_image(self, sketch_image: str, max_size: int) -> str:
-        pass
+        compressing = self.converter.compress_image(sketch_image, max_size)
+        return compressing
 
     def download_sketch(self) -> str:
         sketch_file_path = self.converter.download_sketch()

@@ -13,6 +13,9 @@ class ImageToSketchConverter:
         self.compressed_image = ""
         self.coloring_image=""
     
+    def get_compressed_image(self)->str:
+        return self.compressed_image
+    
     def get_coloring_image(self)->str:
         return self.coloring_image
     
@@ -103,11 +106,18 @@ class ImageToSketchConverter:
     
     # compress sketch image
     def compress_image(self, sketch_image: str, max_size: int) -> str:
-        pass
+        img = Image.open(sketch_image)
+        img.thumbnail((max_size, max_size))
+        basename = os.path.basename(sketch_image)
+        self.compressed_image = os.path.join("static", "compressed", basename)
+        img.save(self.compressed_image)
+        return self.compressed_image
     
     # fungsi download
     def download_sketch(self):
-        if self.coloring_image:
+        if self.compressed_image:
+            file_download = self.get_compressed_image()
+        elif self.coloring_image:
             file_download = self.get_coloring_image()
         else:
             file_download = self.get_sketch_image()
