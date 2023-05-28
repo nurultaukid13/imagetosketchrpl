@@ -43,3 +43,6 @@ class Image:
     
     def get_weight(self) -> int:
         return self.weight
+    
+    def get_file_name(self)->str:
+        return self.file_name

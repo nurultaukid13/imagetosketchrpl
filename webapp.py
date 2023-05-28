@@ -2,12 +2,14 @@ from flask import Flask, request, render_template, flash, redirect, url_for
 from imageToSketchConverterFacade import ImageToSketchConverterFacade
 from image import Image
 from color import Color
+from filemanager import FileManager
 
 class WebApp:
     def __init__(self):
         self.app = Flask(__name__)
         self.app.secret_key = 'kelompok3rpl'
         self.facade = ImageToSketchConverterFacade()
+        self.filemanager = FileManager()
 
     def run(self):
         self._setup_routes()
@@ -34,6 +36,7 @@ class WebApp:
                 if gambar.scan_file(request.files['upload']):
                     request.files['upload'].save(gambar.get_file_path())
                     gambar.set_weight()
+                    self.filemanager.delete_files_in_folder_after_timeout('original', 60)
                     return redirect(url_for('uploaded_sketch'))
                 else:
                     return redirect(request.url)
@@ -45,6 +48,7 @@ class WebApp:
                 return redirect(url_for('upload_page'))
             else:
                 sketch_image = self.facade.convert_to_sketch(gambar.get_file_path(), 'static/sketch')
+                self.filemanager.delete_files_in_folder_after_timeout('sketch', 60)
                 return render_template('upload.html', file_path = sketch_image)
             
         @self.app.route('/uploaded_sketch/coloring', methods=['POST'])
@@ -56,21 +60,19 @@ class WebApp:
         def color_page():
             colorsketch=warna.hex_to_rgb(warna.get_rgb_color())
             self.facade.set_color(self.facade.get_sketch_image(), colorsketch)
+            self.filemanager.delete_files_in_folder_after_timeout('coloring',60)
             return render_template('upload.html', color=colorsketch, file_path=self.facade.get_coloring_image())
             
         @self.app.route('/download', methods=['GET'])
         def download_file():
             compress_checkbox = request.args.get('compress') == 'on'
-    
             if compress_checkbox:
                 if self.facade.get_coloring_image():
-                    compressed_sketch = self.facade.compress_image(self.facade.get_coloring_image(), max_size=1920)  # Adjust the `max_size` as needed
+                    self.facade.compress_image(self.facade.get_coloring_image(), max_size=1920)
                 else:
-                    compressed_sketch = self.facade.compress_image(self.facade.get_sketch_image(), max_size=1920)  # Adjust the `max_size` as needed
-                return self.facade.download_sketch()
-            else:
-                return self.facade.download_sketch()
-
+                    self.facade.compress_image(self.facade.get_sketch_image(), max_size=1920)
+            self.filemanager.delete_files_in_folder_after_timeout('compressed', 60)
+            return self.facade.download_sketch()
 
 if __name__ == "__main__":
     web_app = WebApp()

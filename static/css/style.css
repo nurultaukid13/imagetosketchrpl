@@ -12,7 +12,7 @@ a {
 }
 
 .upload-drop input {
-    display:none;
+    display: none;
 }
 
 .full_logo {
@@ -101,8 +101,23 @@ a {
     transform: scaleX(1);
 }
 
-.nav-item a:hover {
+.nav-item a:hover{
     color: #969beb;
+}
+
+.nav-item a.active {
+    color: #969beb;
+    position: relative;
+}
+
+.nav-item a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background-color: #969beb;
 }
 
 .dropdown-menu {
@@ -402,7 +417,7 @@ a {
 
 .upload-drop {
     border: 7px dashed #abaaaa;
-    padding: 10rem;
+    padding: 6rem;
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
@@ -410,13 +425,13 @@ a {
     align-items: center;
 }
 
-.preview_sketch{
+.preview_sketch {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.preview_sketch img{
+.preview_sketch img {
     max-height: 35rem;
     max-width: 45rem;
     border: 7px dashed #abaaaa;
@@ -491,6 +506,7 @@ a {
     margin: auto;
     pointer-events: none;
 }
+
 .upload-download {
     font-size: 16px;
     padding: 20px 180px;
@@ -504,7 +520,7 @@ a {
     margin-right: 4rem;
 }
 
-.siap-download{
+.siap-download {
     font-size: 16px;
     padding: 20px 180px;
     background-color: #5762f4;
@@ -518,7 +534,7 @@ a {
     transition: all 0.3s ease-in-out
 }
 
-.siap-download:hover{
+.siap-download:hover {
     background-color: #020751;
 }
 
