@@ -8,18 +8,23 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url_for('static', filename='css/css/all.css')}}" type="text/css">
     <title>Image to Sketch</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="full_logo">
+    <script>
+        AOS.init();
+    </script>   
+    <nav class="navbar" data-aos="fade-down" data-aos-duration="800">
+        <div class="full_logo" data-aos="fade-right" data-aos-duration="1000">
             <a href="/">
                 <div class="logo"><span>3</span></div>
                 <div class="judul_nav">Image to Sketch</div>
             </a>
         </div>
-        <ul class="nav-menu">
+        <ul class="nav-menu" data-aos="fade-left" data-aos-duration="1000">
             <li class="nav-item"><a href="/#home">Home</a></li>
             <li class="nav-item"><a href="/#tutorial">Tutorial</a></li>
             <li class="nav-item dropdown">
@@ -34,14 +39,14 @@
 
     <div class="upload-container">
         <div class="upload-left">
-            <div class="content-upload">
+            <div class="content-upload" data-aos="zoom-in" data-aos-duration="1000">
                 {%if file_path%}
-                <div class="preview_sketch">
+                <div class="preview_sketch" data-aos="zoom-in" data-aos-duration="1500">
                     <img src="{{file_path}}" alt="preview_sketch">
                 </div>
                 {%else %}
                 <form action="/upload/sketch" enctype="multipart/form-data" method="POST">
-                    <div class="upload-drop">
+                    <div class="upload-drop" data-aos="zoom-in" data-aos-duration="1500">
                         <i class="fas fa-image upload-icon"></i>
                         <div class="upload-text">Drag & drop an image</div>
                         <input type="file" name="upload" id="upload" accept="image/*">
@@ -52,22 +57,22 @@
             </div>
         </div>
         <div class="upload-right">
-            <div class="upload-title">Image to Sketch</div>
-            <div class="upload-desc">Membuat sketsa gambar jadi lebih mudah dan menarik.</div>
+            <div class="upload-title" data-aos="fade-down" data-aos-duration="1000">Image to Sketch</div>
+            <div class="upload-desc" data-aos="fade-down" data-aos-duration="1000">Membuat sketsa gambar jadi lebih mudah dan menarik.</div>
             <form action="/download" method="GET">
                 {%if file_path%}
-                <button type="submit" class="siap-download">Download</button>
+                <button type="submit" class="siap-download" data-aos="fade-up" data-aos-duration="1000">Download</button>
                 {%else%}
-                <button class="upload-download" disabled>Download</button>
+                <button data-aos="fade-up" data-aos-duration="1000" class="upload-download" disabled>Download</button>
                 {%endif%}
                 <div class="bawah-download">
-                    <div class="upload-checkbox">
+                    <div class="upload-checkbox" data-aos="fade-up" data-aos-duration="1000">
                         <label for="compress">Compress</label>
                         <input type="checkbox" id="compress" name="compress" {% if not file_path %} disabled
                             style="pointer-events:none" {% endif %}>
                     </div>
             </form>
-            <div class="upload-pickcolor">
+            <div class="upload-pickcolor" data-aos="fade-up" data-aos-duration="1000">
                 <form action="/uploaded_sketch/coloring" method="POST" enctype="multipart/form-data">
                     <label for="upload-color-input">Pilih warna:</label>
                     <input type="color" name="color" id="color" {% if file_path %} class="upload-color"
