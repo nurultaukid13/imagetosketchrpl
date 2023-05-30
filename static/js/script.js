@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Error',
+                    title: 'Oops...',
                     text: 'Terjadi kesalahan saat upload gambar. Pastikan mengupload dengan format yang diizinkan (png, jpg, atau jpeg) dan ukuran dibawah 10MB',
                 });
             }
