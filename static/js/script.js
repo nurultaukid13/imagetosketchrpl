@@ -38,10 +38,19 @@ document.addEventListener('DOMContentLoaded', () => {
             body: formData
         }).then(response => {
             if (response.ok) {
-                alert('Gambar berhasil diupload!');
-                window.location.href = '/uploaded_sketch';
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: 'Gambar berhasil diupload!',
+                }).then(() => {
+                    window.location.href = '/uploaded_sketch';
+                });
             } else {
-                alert('Terjadi kesalahan saat upload gambar.  Pastikan mengupload dengan format yang diizinkan (png, jpg atau jpeg) dan ukuran dibawah 10MB');
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Terjadi kesalahan saat upload gambar. Pastikan mengupload dengan format yang diizinkan (png, jpg, atau jpeg) dan ukuran dibawah 10MB',
+                });
             }
         });
     });

@@ -106,18 +106,24 @@ a {
 }
 
 .nav-item a.active {
-    color: #969beb;
+    color: #333;
+    margin-left: 20px;
     position: relative;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .nav-item a.active::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 50%;
     height: 2px;
     background-color: #969beb;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
 }
 
 .dropdown-menu {

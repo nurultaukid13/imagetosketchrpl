@@ -1,0 +1,82 @@
+@startuml 
+title Image to Sketch Converter - Facade Design Pattern
+
+class ImageToSketchConverterFacade {
+  - converter: ImageToSketchConverter
+  + convert_to_sketch(self, image_path: str, sketch_location: str)
+  + set_color(self, image_path: str, rgb_color: str): str
+  + compress_sketch(self, sketch_image)
+  + download_sketch(file_path: str)
+  + set_sketch_type(self, sketch_type: str)
+  + set_sketch_intensity(self, intensity: int)
+}
+
+class ImageToSketchConverter {
+  - original_image: str
+  - sketch_image: str
+  - compressed_image: str
+  - sketch_location: str
+  - sketch_type: SketchType
+  - sketch_intensity: int
+  + init()
+  - {static} dodge(front, back): dodge
+  - {static} grayscale(rgb): grayscale
+  + convert_to_sketch(self, original_image: str, sketch_location: str) : str
+  + coloring(self, sketch_image: str, hex_code: str) : str
+  + {static} blend_if_gray(sketch_image: str, threshold: int)
+  + {static} color_overlay(sketch_image, color)
+  + download_sketch(self) : str
+  + compress_image(self, sketch_image: str) : str
+  + set_sketch_type(self, sketch_type: SketchType)
+  + set_sketch_intensity(self, intensity: int)
+}
+
+class SketchType {
+  - type_name: str
+  + init(self, type_name: str)
+  + get_type_name(self): str
+}
+
+class SketchIntensity {
+  - intensity_value: int
+  + init(self, intensity_value: int)
+  + get_intensity_value(self): int
+}
+
+class Image {
+  - file_path: str
+  - weight: int
+  - file_name: str
+  + init()
+  + set_file_path(): str
+  + set_weight(): int
+  + set_file_name(): str
+  + allowed_file(nama_file)
+  + scan_file(self, request_file): bool
+  + get_file_path(self): str
+  + get_weight(self): str
+}
+
+class Color {
+  - rgb_color: str
+  + init(self, rgb_color: str)
+  + hex_to_rgb(hex_code): str
+  + get_rgb_color(self): str
+}
+
+class WebApp {
+  - app: Flask
+  - secret_key: str
+  - facade: ImageToSketchConverterFacade
+  + init()
+  + run(self)
+  + _setup_routes(self)
+}
+
+WebApp -> ImageToSketchConverterFacade
+ImageToSketchConverterFacade -> ImageToSketchConverter
+ImageToSketchConverter --> SketchType
+ImageToSketchConverter --> SketchIntensity
+ImageToSketchConverter --> Image
+ImageToSketchConverter --> Color
+@enduml
