@@ -42,6 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     icon: 'success',
                     title: 'Success',
                     text: 'Gambar berhasil diupload!',
+                    showClass: {
+                        popup: 'animate__animated animate__bounceIn'
+                      },
+                      hideClass: {
+                        popup: 'animate__animated animate__bounceOut'
+                      }
                 }).then(() => {
                     window.location.href = '/uploaded_sketch';
                 });
@@ -50,6 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Terjadi kesalahan saat upload gambar. Pastikan mengupload dengan format yang diizinkan (png, jpg, atau jpeg) dan ukuran dibawah 10MB',
+                    showClass: {
+                        popup: 'animate__animated animate__flipInY'
+                      },
+                      hideClass: {
+                        popup: 'animate__animated animate__flipOutY'
+                      }
                 });
             }
         });
