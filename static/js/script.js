@@ -57,10 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     title: 'Oops...',
                     text: 'Terjadi kesalahan saat upload gambar. Pastikan mengupload dengan format yang diizinkan (png, jpg, atau jpeg) dan ukuran dibawah 10MB',
                     showClass: {
-                        popup: 'animate__animated animate__flipInY'
+                        popup: 'animate__animated animate__fadeInDown'
                       },
                       hideClass: {
-                        popup: 'animate__animated animate__flipOutY'
+                        popup: 'animate__animated animate__fadeOutDown'
                       }
                 });
             }
