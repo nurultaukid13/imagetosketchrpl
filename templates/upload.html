@@ -8,10 +8,16 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url_for('static', filename='css/css/all.css')}}" type="text/css">
     <title>Image to Sketch</title>
+
+    <!--  AOS  --> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Script asli -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/sweetalert2.min.css')}}" type="text/css">
+
+    <!-- sweetalert -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="{{url_for('static', filename='css/animate.min.css')}}" type="text/css">
 </head>
 
@@ -85,7 +91,7 @@
             </div>
         </div>
     </div>
-    <script src="{{ url_for('static', filename='js/sweetalert2.min.js') }}"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
 </body>
 
 </html>

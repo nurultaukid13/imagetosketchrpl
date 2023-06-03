@@ -7,19 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
         const formData = new FormData();
         formData.append('upload', event.dataTransfer.files[0]);
-
-        // Send file to server
-        fetch('/upload/sketch', {
-            method: 'POST',
-            body: formData
-        }).then(response => {
-            if (response.ok) {
-                alert('Gambar berhasil diupload!');
-                window.location.href = '/uploaded_sketch';
-            } else {
-                alert('Terjadi kesalahan saat upload gambar. Pastikan mengupload dengan format yang diizinkan (png, jpg atau jpeg) dan ukuran dibawah 10MB');
-            }
-        });
     });
 
     // Prevent default behavior when file is dragged over uploadDrop
@@ -27,10 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
     });
 
-    // Handle file selection through uploadInput
-    uploadInput.addEventListener('change', (event) => {
+    // Function to handle file upload
+    const handleFileUpload = (file) => {
         const formData = new FormData();
-        formData.append('upload', event.target.files[0]);
+        formData.append('upload', file);
 
         // Send file to server
         fetch('/upload/sketch', {
@@ -44,10 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     text: 'Gambar berhasil diupload!',
                     showClass: {
                         popup: 'animate__animated animate__bounceIn'
-                      },
-                      hideClass: {
+                    },
+                    hideClass: {
                         popup: 'animate__animated animate__bounceOut'
-                      }
+                    }
                 }).then(() => {
                     window.location.href = '/uploaded_sketch';
                 });
@@ -55,15 +42,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: 'Terjadi kesalahan saat upload gambar. Pastikan mengupload dengan format yang diizinkan (png, jpg, atau jpeg) dan ukuran dibawah 10MB',
+                    text: 'Terjadi kesalahan saat upload gambar. Pastikan mengupload dengan format yang diizinkan (png, jpg, atau jpeg)',
                     showClass: {
                         popup: 'animate__animated animate__fadeInDown'
-                      },
-                      hideClass: {
+                    },
+                    hideClass: {
                         popup: 'animate__animated animate__fadeOutDown'
-                      }
+                    }
                 });
             }
         });
+    };
+
+    // Function to handle file drop
+    const handleFileDrop = (event) => {
+        event.preventDefault();
+        const file = event.dataTransfer.files[0];
+        handleFileUpload(file);
+    };
+
+    // Event listeners for file selection and drop
+    uploadInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        handleFileUpload(file);
     });
+
+    uploadDrop.addEventListener('dragover', (event) => {
+        event.preventDefault();
+        uploadDrop.classList.add('drag-over');
+    });
+
+    uploadDrop.addEventListener('dragleave', () => {
+        uploadDrop.classList.remove('drag-over');
+    });
+
+    uploadDrop.addEventListener('drop', handleFileDrop);
 });
