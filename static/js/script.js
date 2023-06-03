@@ -1,6 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     const uploadDrop = document.querySelector('.upload-drop');
     const uploadInput = document.getElementById('upload');
+    const form = document.getElementById('compressdownload');
+    const compressCheckbox = document.getElementById('compress');
+
+    form.addEventListener('submit', (event) => {
+        if (compressCheckbox.checked) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: 'Gambar berhasil di compress!',
+                showClass: {
+                    popup: 'animate__animated animate__bounceIn'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__bounceOut'
+                }
+            });
+        }
+    });
 
     // Handle file drop
     uploadDrop.addEventListener('drop', (event) => {

@@ -114,13 +114,6 @@ class ImageToSketchConverter:
         return self.compressed_image
     
     # fungsi download
-    def download_sketch(self):
-        if self.compressed_image and  os.path.basename(self.compressed_image) == os.path.basename(self.original_image):
-            file_download = self.get_compressed_image()
-        elif self.coloring_image and  os.path.basename(self.coloring_image) == os.path.basename(self.original_image):
-            file_download = self.get_coloring_image()
-        else:
-            file_download = self.get_sketch_image()
-
+    def download_sketch(self, file_download):
         sketh_path = os.path.splitext(os.path.basename(file_download))
         return send_file(file_download, download_name=sketh_path[0] + '_sketch' + sketh_path[1], as_attachment=True)

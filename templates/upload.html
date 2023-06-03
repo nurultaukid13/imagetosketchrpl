@@ -68,10 +68,10 @@
             <div class="upload-title" data-aos="fade-down" data-aos-duration="1000">Image to Sketch</div>
             <div class="upload-desc" data-aos="fade-down" data-aos-duration="1000">Membuat sketsa gambar jadi lebih
                 mudah dan menarik.</div>
-            <form action="/download" method="GET">
+            <form action="/download" method="GET" id="compressdownload">
                 {%if file_path%}
                 <button type="submit" class="siap-download" data-aos="fade-up"
-                    data-aos-duration="1000">Download</button>
+                    data-aos-duration="1000">Download({{file_weight}}KB)</button>
                 {%else%}
                 <button data-aos="fade-up" data-aos-duration="1000" class="upload-download" disabled>Download</button>
                 {%endif%}

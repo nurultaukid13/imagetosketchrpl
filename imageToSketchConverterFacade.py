@@ -24,6 +24,6 @@ class ImageToSketchConverterFacade:
         compressing = self.converter.compress_image(sketch_image, max_size)
         return compressing
 
-    def download_sketch(self) -> str:
-        sketch_file_path = self.converter.download_sketch()
+    def download_sketch(self, file_download) -> str:
+        sketch_file_path = self.converter.download_sketch(file_download)
         return sketch_file_path
