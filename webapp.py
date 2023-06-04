@@ -11,7 +11,6 @@ class WebApp:
         self.app.secret_key = 'kelompok3rpl'
         self.facade = ImageToSketchConverterFacade()
         self.filemanager = FileManager()
-        self.app=self.app
 
     def run(self):
         self._setup_routes()
@@ -98,4 +97,4 @@ class WebApp:
 
 if __name__ == "__main__":
     web_app = WebApp()
-    web_app.run()
+    web_app.app.run()
