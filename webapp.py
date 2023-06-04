@@ -3,8 +3,6 @@ from imageToSketchConverterFacade import ImageToSketchConverterFacade
 from image import Image
 from color import Color
 from filemanager import FileManager
-import os
-
 
 class WebApp:
     def __init__(self):
@@ -16,7 +14,7 @@ class WebApp:
     def run(self):
         self._setup_routes()
         self.app.run(debug=True, port=5004)
-
+        
     def _setup_routes(self):
         warna = Color()
         gambar = Image()
@@ -98,4 +96,4 @@ class WebApp:
 
 if __name__ == "__main__":
     web_app = WebApp()
-    web_app.run(debug=True, port=os.getenv("PORT", default=5000))
+    web_app.run()
