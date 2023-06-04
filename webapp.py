@@ -96,5 +96,5 @@ class WebApp:
             return self.facade.download_sketch(gambar.file_path_download)
 
 if __name__ == "__main__":
-    app = WebApp().app
-    app.run()
+    web_app = WebApp()
+    web_app.run()
