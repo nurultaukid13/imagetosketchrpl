@@ -1,1 +1,1 @@
-web: gunicorn webapp:WebApp()
+web: gunicorn webapp:WebApp

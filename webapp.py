@@ -3,6 +3,7 @@ from imageToSketchConverterFacade import ImageToSketchConverterFacade
 from image import Image
 from color import Color
 from filemanager import FileManager
+import os
 
 
 class WebApp:
@@ -97,4 +98,4 @@ class WebApp:
 
 if __name__ == "__main__":
     web_app = WebApp()
-    web_app.run()
+    web_app.run(debug=True, port=os.getenv("PORT", default=5000))
