@@ -11,8 +11,6 @@ class Image:
         self.file_path_download = ''
         self.file_path_before_compress = ''
         self.file_weight_before_compress = ''
-        self.file_weight_after_compress = ''
-        self.file_path_after_compress = ''
 
     def set_weight(self):
         self.weight = os.path.getsize(self.file_path)
@@ -22,12 +20,6 @@ class Image:
         
     def set_weight_before_compress(self):
         self.file_weight_before_compress = os.path.getsize(self.file_path_before_compress)
-    
-    def set_file_path_after_compress(self,basename:str, folder):
-        self.file_path_after_compress = os.path.join(folder, basename)
-        
-    def set_weight_after_compress(self):
-        self.file_weight_after_compress = os.path.getsize(self.file_path_after_compress)
 
     def set_file_path(self,filepath:str):
         self.file_path = filepath
