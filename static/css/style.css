@@ -11,8 +11,21 @@ a {
     text-decoration: none;
 }
 
-.upload-drop input {
+.upload-drop input{
     display: none;
+}
+
+.anyimages input{
+    display: none;
+}
+
+.anyimages label{
+    font-size: 0.8rem;
+}
+
+.anyimages{
+    margin-right: 3rem;
+    margin-top: 1rem;
 }
 
 .full_logo {
@@ -540,7 +553,7 @@ a {
 .bawah-download {
     display: flex;
     flex-direction: row-reverse;
-    margin-right: 10rem;
+    margin-right: 11rem;
 }
 
 .upload-checkbox {

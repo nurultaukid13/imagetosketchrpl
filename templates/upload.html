@@ -90,6 +90,14 @@
                 </form>
             </div>
         </div>
+        {%if file_path%}
+            <div class="anyimages" data-aos="fade-up" data-aos-duration="1000">
+                <form action="/upload/sketch" enctype="multipart/form-data" method="POST">
+                    <input type="file" name="upload" id="upload" accept="image/*" onchange="this.form.submit()">
+                    <label for="upload" class="upload-browse">Upload your other image</label>
+                </form>
+            </div>
+        {%endif%}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
 </body>
