@@ -16,7 +16,7 @@
 <body>
     <script>
         AOS.init();
-    </script>      
+    </script>
     <nav class="navbar" data-aos="fade-down" data-aos-duration="800">
         <div class="full_logo" data-aos="fade-right" data-aos-duration="1000">
             <a href="#">
@@ -27,6 +27,7 @@
         <ul class="nav-menu" data-aos="fade-left" data-aos-duration="1000">
             <li class="nav-item"><a href="#home" class="active">Home</a></li>
             <li class="nav-item"><a href="#tutorial">Tutorial</a></li>
+            <li class="nav-item"><a href="#about">About</a></li>
             <li class="nav-item dropdown">
                 <a href="#fitur1 #fitur2">Fitur <i class="fa fa-angle-down"></i></a>
                 <ul class="dropdown-menu">
@@ -89,10 +90,14 @@
     <section class="fitur" id="fitur1">
         <div class="fitur-left">
             <div class="image-stack">
-                <img src="{{url_for('static', filename='img/fitur4.png')}}" alt="Gambar 4" data-aos="fade-right" data-aos-duration="2400">
-                <img src="{{url_for('static', filename='img/fitur3.png')}}" alt="Gambar 3" data-aos="fade-right" data-aos-duration="1900">
-                <img src="{{url_for('static', filename='img/fitur2.png')}}" alt="Gambar 2" data-aos="fade-right" data-aos-duration="1400">
-                <img src="{{url_for('static', filename='img/fitur1.png')}}" alt="Gambar 1" data-aos="fade-right" data-aos-duration="900">
+                <img src="{{url_for('static', filename='img/fitur4.png')}}" alt="Gambar 4" data-aos="fade-right"
+                    data-aos-duration="2400">
+                <img src="{{url_for('static', filename='img/fitur3.png')}}" alt="Gambar 3" data-aos="fade-right"
+                    data-aos-duration="1900">
+                <img src="{{url_for('static', filename='img/fitur2.png')}}" alt="Gambar 2" data-aos="fade-right"
+                    data-aos-duration="1400">
+                <img src="{{url_for('static', filename='img/fitur1.png')}}" alt="Gambar 1" data-aos="fade-right"
+                    data-aos-duration="900">
             </div>
         </div>
         <div class="fitur-right" data-aos="fade-left" data-aos-duration="900">
@@ -106,18 +111,40 @@
     <section class="fitur" id="fitur2">
         <div class="fitur-right" data-aos="fade-right" data-aos-duration="900">
             <h1 id="demo">Compres sketsamu untuk menghemat penyimpanan data.</h1>
-            <p>Fitur Compres memungkinkan kamu untuk mengurangi ukuran file dengan cepat dan mudah, sehingga dapat menghemat ruang
+            <p>Fitur Compres memungkinkan kamu untuk mengurangi ukuran file dengan cepat dan mudah, sehingga dapat
+                menghemat ruang
                 penyimpanan datamu.</p>
             <a href="/upload" class="btn-upload" data-aos="zoom-in" data-aos-duration="500">Upload Image Kamu</a>
         </div>
         <div class="fitur-left move-in">
             <div class="image-stack2" data-aos="fade-left" data-aos-duration="900">
                 <img src="{{url_for('static', filename='img/fitur1.png')}}" alt="Gambar_home" class="gambar1">
-                <img src="{{url_for('static', filename='img/fitur1.png')}}" alt="Gambar_home" class="gambar2"data-aos="fade-left" data-aos-duration="500">
+                <img src="{{url_for('static', filename='img/fitur1.png')}}" alt="Gambar_home" class="gambar2"
+                    data-aos="fade-left" data-aos-duration="500">
             </div>
         </div>
     </section><!-- colorchange -->
     <script src="{{ url_for('static', filename='js/home.js') }}"> </script>
+
+    <footer>
+
+            <div class="container-footer">
+                <div class="footer">
+                    <div class="copyright">
+                        <p>&copy; 2023 Image to Sketch Kelompok 3. All rights reserved.</p>
+                    </div>
+
+                    <div class="information">
+                        <p> Contact | imagetosketch@gmail.com</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+
+
 </body>
 
 </html>
