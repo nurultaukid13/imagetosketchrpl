@@ -572,8 +572,10 @@ footer{
 }
 
 .container-footer{
+    flex: 1;
     width: 100%;  
     background: #101010;
+    
 }
 
 .footer{
@@ -581,7 +583,7 @@ footer{
     margin: auto;
     display: flex;
     justify-content: space-between;  
-    padding: 20px;
+    padding: 7px;
     font-family: sans-serif;
     font-size: 15px;
 }
