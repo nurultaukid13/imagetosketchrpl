@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const uploadInput = document.getElementById('upload');
     const form = document.getElementById('compressdownload');
     const compressCheckbox = document.getElementById('compress');
+    const uploadInput2 = document.getElementById('upload2');
 
     form.addEventListener('submit', (event) => {
         if (compressCheckbox.checked) {
@@ -81,6 +82,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event listeners for file selection and drop
     uploadInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        handleFileUpload(file);
+    });
+
+    uploadInput2.addEventListener('change', (event) => {
         const file = event.target.files[0];
         handleFileUpload(file);
     });
