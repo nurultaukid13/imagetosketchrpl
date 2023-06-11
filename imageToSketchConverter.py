@@ -55,9 +55,16 @@ class ImageToSketchConverter:
         gambar_tnpa_putih = self.blend_if_gray(sketch_image, 243)
         colored_image = self.color_overlay(gambar_tnpa_putih, rgb_color)
         colored_image_rgb = colored_image.convert("RGB")  # Convert to RGB mode
+        # Ambil format gambar dari sketch_image tanpa titik
+        image_format = os.path.splitext(sketch_image)[1][1:].lower()
+        if image_format == 'PNG':
+            format_image = 'PNG'
+        else:
+            format_image ='JPEG'
         basename = os.path.basename(sketch_image)
         self.coloring_image = os.path.join("static", "coloring", basename)
-        colored_image_rgb.save(self.coloring_image, "JPEG")  # Save as JPEG
+        # Simpan gambar dengan format yang sesuai
+        colored_image_rgb.save(self.coloring_image, format=format_image)
         return self.coloring_image
 
     #menghilangkan warna putih pada gambar
@@ -105,12 +112,13 @@ class ImageToSketchConverter:
         return img
     
     # compress sketch image
-    def compress_image(self, sketch_image: str, max_size: int) -> str:
+    def compress_image(self, sketch_image: str, max_size: int, kualitas: int) -> str:
         img = Image.open(sketch_image)
         img.thumbnail((max_size, max_size))
         basename = os.path.basename(sketch_image)
         self.compressed_image = os.path.join("static", "compressed", basename)
-        img.save(self.compressed_image)
+        image_format = img.format
+        img.save(self.compressed_image, format=image_format, quality=kualitas)
         return self.compressed_image
     
     # fungsi download

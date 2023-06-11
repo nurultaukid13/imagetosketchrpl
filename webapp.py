@@ -83,9 +83,9 @@ class WebApp:
             compress_checkbox = request.args.get('compress') == 'on'
             if compress_checkbox:
                 if self.facade.get_coloring_image() and self.facade.get_coloring_image() == 'static/coloring/'+gambar.file_name and warna.get_rgb_color()!=(255,255,255):
-                    gambar.file_path_download = self.facade.compress_image(self.facade.get_coloring_image(), max_size=560)
+                    gambar.file_path_download = self.facade.compress_image(self.facade.get_coloring_image(), max_size=1080, kualitas=50)
                 else:
-                    gambar.file_path_download = self.facade.compress_image(self.facade.get_sketch_image(), max_size=1080)
+                    gambar.file_path_download = self.facade.compress_image(self.facade.get_sketch_image(), max_size=1080, kualitas=90)
             else:
                 if self.facade.get_coloring_image() and self.facade.get_coloring_image() == 'static/coloring/'+gambar.file_name and warna.get_rgb_color()!=(255,255,255):
                     gambar.file_path_download = self.facade.get_coloring_image()
